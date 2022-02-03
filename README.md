@@ -11,11 +11,11 @@ In order to run the blockchain:
       
 Network Configuration:
 
-  Name of blockchain = fintechnet
-  Consensus = Clique - proof-of-authority 
-  Block seconds = 15
-  Prefund accounts? = yes 
-  Chain/Network id = 5151
+Name of blockchain = fintechnet
+Consensus = Clique - proof-of-authority 
+Block seconds = 15
+Prefund accounts? = yes 
+Chain/Network id = 5151
   
 Geth commands to start blockchain:
 
