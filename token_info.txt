@@ -1,0 +1,34 @@
+Name of blockchain = fintechnet
+consensus = Clique - proof-of-authority 
+block seconds = 15
+prefund accounts? = yes 
+chain/network id = 5151
+
+
+
+wallet/node1 
+password = FintechTestpass1
+pk = 0x07965e52eB7EBB3f9485b618625b03c3c1047Dac
+sk = f917bd2a492c632946c1103ca7a0e297ef8fc41ad2e11a6ee7e6bf6224f4c856
+
+wallet/node2
+password = FintechTestpass2
+pk = 0x99971588F1EB72f0Ab8cdCf2c008c0110d4897c5
+sk = 1056ad7a5c8f7eb94d5b177060ad6d77e86ebefaf6172b3227b7e918f67e7a62
+
+
+Blockchain commands
+
+Starting blockchain 
+./bootnode -nodekey boot.key -verbosity 9 -addr :30310
+
+Starting node 1
+./geth --datadir node1 --port 30311 --rpc --rpcport 8545 --bootnodes "enode://2c4b863969f1f70559acd87a87a289d3b94a3be3acacb06418e0a8d434e58b5f65cca7e047d89a5c65572211f6a7a1ea5d0e111c46e98c05b53c05676499b7aa@127.0.0.1:30310" --ipcdisable 
+
+./geth --datadir node1/ --syncmode "full" --port 30311 --rpc --rpcaddr "localhost" --rpcport 8545 --rpcapi "personal,db,eth,net,web3,txpool,miner" --bootnodes "enode://2c4b863969f1f70559acd87a87a289d3b94a3be3acacb06418e0a8d434e58b5f65cca7e047d89a5c65572211f6a7a1ea5d0e111c46e98c05b53c05676499b7aa@127.0.0.1:30310" --networkid 5151 --unlock "0x07965e52eB7EBB3f9485b618625b03c3c1047Dac" --password node1/password.txt --allow-insecure-unlock --mine
+
+Starting node 2
+./geth --datadir node2 --unlock 99971588F1EB72f0Ab8cdCf2c008c0110d4897c5 --allow-insecure-unlock --port 30312 --rpc --rpcport 8546 --bootnodes "enode://2c4b863969f1f70559acd87a87a289d3b94a3be3acacb06418e0a8d434e58b5f65cca7e047d89a5c65572211f6a7a1ea5d0e111c46e98c05b53c05676499b7aa@127.0.0.1:30310" --ipcdisable 
+
+
+./geth --datadir node2/ --syncmode "full" --port 30312 --rpc --rpcaddr "localhost" --rpcport 8546 --rpcapi "personal,db,eth,net,web3,txpool,miner" --bootnodes "enode://2c4b863969f1f70559acd87a87a289d3b94a3be3acacb06418e0a8d434e58b5f65cca7e047d89a5c65572211f6a7a1ea5d0e111c46e98c05b53c05676499b7aa@127.0.0.1:30310" --networkid 5151 --unlock "0x99971588F1EB72f0Ab8cdCf2c008c0110d4897c5 " --password node2/password.txt --allow-insecure-unlock --mine
