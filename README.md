@@ -11,11 +11,17 @@ In order to run the blockchain:
       
 Network Configuration:
 
-Name of blockchain = fintechnet /n
+Name of blockchain = fintechnet 
+
 Consensus = Clique - proof-of-authority 
+
 Block seconds = 15
-Prefund accounts? = yes 
+
+Prefund accounts? = yes
+
 Chain/Network id = 5151
+  
+  
   
 Geth commands to start blockchain:
 
@@ -30,6 +36,8 @@ Node 1:
 Node 2:
 
   ./geth --datadir node2/ --syncmode "full" --port 30312 --rpc --rpcaddr "localhost" --rpcport 8546 --rpcapi "personal,db,eth,net,web3,txpool,miner" --bootnodes "enode://2c4b863969f1f70559acd87a87a289d3b94a3be3acacb06418e0a8d434e58b5f65cca7e047d89a5c65572211f6a7a1ea5d0e111c46e98c05b53c05676499b7aa@127.0.0.1:30310" --networkid 5151 --unlock "0x99971588F1EB72f0Ab8cdCf2c008c0110d4897c5 " --password node2/password.txt --allow-insecure-unlock --mine
+  
+  
   
 In order to send transactions, a keystore file will need to be loaded into MyCrypto, and the corresponding password entered, in order to send transactions. Load the node/wallet that you want to send the transaction from. Connect to the fintechnet custom node by using the chain ID and RPC port. Enter the wallet address you would like to send ETH to - and send the transaction. 
 
