@@ -11,7 +11,7 @@ In order to run the blockchain:
       
 Network Configuration:
 
-Name of blockchain = fintechnet \n
+Name of blockchain = fintechnet /n
 Consensus = Clique - proof-of-authority 
 Block seconds = 15
 Prefund accounts? = yes 
